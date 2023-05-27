@@ -38,13 +38,12 @@ public class PetLifeCycle extends Common {
         Response response = postUrl(newPet,createJsonBody(body));
         Assert.assertEquals(response.getStatusCode(),200,"Invalid response code");
 
+
         String id = response.jsonPath().get("id").toString();
 
-        Response  response2 = getUrl(petById+id);
+        //Response  response2 = getUrl(petById+id);
+
+        Response  response2 = getUrl(petById.replace("{petId}", String.valueOf(id)));
         Assert.assertEquals(response2.getStatusCode(),200,"Invalid response code");
-
-
-
-
     }
 }
