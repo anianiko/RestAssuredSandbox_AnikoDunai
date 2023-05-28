@@ -11,10 +11,10 @@ import java.util.TreeMap;
 
 import static com.example.sandbox.util.constans.Tags.SMOKE;
 
-public class petListTest extends Common {
+public class PetListTest extends Common {
 
     @Test(enabled = true,groups = {SMOKE},description ="description")
-    public void Test1(){
+    public void T005(){
         Map<String, String> queryParams = new TreeMap<>();
         queryParams.put("status","available");
 
@@ -23,7 +23,7 @@ public class petListTest extends Common {
     }
 
     @Test(enabled = true,groups = {SMOKE},description ="description")
-    public void Test2(){
+    public void T006(){
         Map<String, String> queryParams = new TreeMap<>();
         queryParams.put("status","available");
         Map<String, String> headers = new TreeMap<>();

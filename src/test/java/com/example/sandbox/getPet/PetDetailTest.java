@@ -11,16 +11,23 @@ import java.util.TreeMap;
 
 import static com.example.sandbox.util.constans.Tags.SMOKE;
 
-public class petDetailTest extends Common {
+public class PetDetailTest extends Common {
 
-    @Test(enabled = true,groups = {SMOKE},description ="PET[GET] Finds Pets by status/ID")
-    public void TC003(){
+    @Test(enabled = true,groups = {SMOKE},description ="PET[GET] Find Pets by status/ID")
+    public void T003(){
         Map<String, String> queryParams = new TreeMap<>();
         queryParams.put("status","available");
 
         //Find Pets by status - 200
         Response  response = getUrl(findByStatus, queryParams);
         Assert.assertEquals(response.getStatusCode(),200,"Invalid response code");
+
+        //Find Pets by status - 400
+        //TODO - PET[GET] Find Pets by status - 400 Invalid status value
+        /*
+        Response  response5 = getUrl(findByStatus, queryParams);
+        Assert.assertEquals(response5.getStatusCode(),400,"Invalid response code");
+         */
 
 
         String id = response.jsonPath().get("[0].id").toString();
@@ -36,7 +43,7 @@ public class petDetailTest extends Common {
         Assert.assertEquals(response3.getStatusCode(),404,"Invalid response code");
 
         //Find Pets by ID - 400
-        //TODO - 400 Invalid ID supplied
+        //TODO - PET[GET] Find Pets by ID - 400 Invalid ID supplied
         /*
         Response  response4 = getUrl(petById.replace("{petId}", String.valueOf(....)));
         Assert.assertEquals(response4.getStatusCode(),400,"Invalid response code");
