@@ -13,6 +13,7 @@ public class Endpoints {
     //-------------------------store-------------------------
     public static final String order = "/store/order";
     public static final String inventory = "/store/inventory";
+    public static final String purchase = "/store/order/{orderId}";
 
     //-------------------------user-------------------------
 
