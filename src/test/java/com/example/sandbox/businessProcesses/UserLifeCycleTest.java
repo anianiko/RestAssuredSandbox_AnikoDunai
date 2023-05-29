@@ -56,22 +56,22 @@ public class UserLifeCycleTest extends Common {
 
     }
 
-    @Test(enabled = true,groups = {SMOKE},description ="USER[GET] Logs user info the system")
+    @Test(enabled = true,groups = {SMOKE},description ="USER[GET] Log user info the system")
     public void T013() {
 
-        //TODO USER[GET] Logs user info the system - 200 successful operation
+        //TODO USER[GET] Log user info the system - 200 successful operation
 
 
 
-        //TODO USER[GET] Logs user info the system - 400 Invalid username/password supplied
+        //TODO USER[GET] Log user info the system - 400 Invalid username/password supplied
 
 
     }
 
-    @Test(enabled = true,groups = {SMOKE},description ="USER[GET] Logs out current logged in user session")
+    @Test(enabled = true,groups = {SMOKE},description ="USER[GET] Log out current logged in user session")
     public void T014() {
 
-        //TODO USER[GET] Logs out current logged in user session - default Successful operation
+        //TODO USER[GET] Log out current logged in user session - default Successful operation
 
 
     }

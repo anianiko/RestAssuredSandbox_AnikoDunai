@@ -15,6 +15,7 @@ import static com.example.sandbox.util.constans.Tags.SMOKE;
 
 public class PetDetailTest extends Common {
 
+
     @Test(enabled = true,groups = {SMOKE},description ="PET[GET] Find Pets by status/ID - pet detail test")
     public void T003(){
         Map<String, String> queryParams = new TreeMap<>();

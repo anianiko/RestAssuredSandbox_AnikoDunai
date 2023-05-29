@@ -14,7 +14,7 @@ public class JsonBody {
             return new ObjectMapper().writeValueAsString(body.getPetBody());
 
         } catch (Throwable e){
-            throw new RuntimeException("Nody Generation Failure");
+            throw new RuntimeException("Body Generation Failure", e);
         }
     }
 

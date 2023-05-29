@@ -8,11 +8,23 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Item {
+public class OrderBody {
 
     @JsonProperty("id")
     private int id;
 
-    @JsonProperty("name")
-    private String name;
+    @JsonProperty("petId")
+    private int petId;
+
+    @JsonProperty("quantity")
+    private int quantity;
+
+    @JsonProperty("shipDate")
+    private String shipDate;
+
+    @JsonProperty("status")
+    private String status;
+
+    @JsonProperty("complete")
+    private Boolean complete;
 }

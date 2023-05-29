@@ -13,23 +13,23 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PetBody {
 
-    @JsonProperty
+    @JsonProperty("id")
     private int id;
 
-    @JsonProperty
+    @JsonProperty("category")
     private Item category;
 
-    @JsonProperty
+    @JsonProperty("name")
     private String name;
 
     @Singular()
-    @JsonProperty
+    @JsonProperty("photoUrls")
     private List<String> photoUrls;
 
     @Singular()
-    @JsonProperty
-    private List<Item> tags;
+    @JsonProperty("tags")
+    private List<Item> tags;        //swagger/definitions/Item.class
 
-    @JsonProperty
+    @JsonProperty("status")
     private String status;
 }

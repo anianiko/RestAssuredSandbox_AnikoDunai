@@ -2,7 +2,7 @@ package com.example.sandbox;
 
 public class Endpoints {
 
-    static final String baseUrl = "https://petstore.swagger.io/v2";
+    public static final String baseUrl = "https://petstore.swagger.io/v2";
 
     //-------------------------pet-------------------------
     public static final String findByStatus = "/pet/findByStatus";

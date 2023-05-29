@@ -1,5 +1,6 @@
-package com.example.sandbox.util.swagger.definitions;
+package com.example.sandbox.util.body.pet;
 
+import com.example.sandbox.util.swagger.definitions.PetBody;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -8,11 +9,9 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Item {
+public class PutUpdatePet extends JsonBody{
 
-    @JsonProperty("id")
-    private int id;
-
-    @JsonProperty("name")
-    private String name;
+    //JSON object
+    @JsonProperty
+    private PetBody PetBody;
 }

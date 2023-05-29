@@ -1,14 +1,12 @@
 package com.example.sandbox.util.body.pet;
 
 import com.example.sandbox.util.swagger.definitions.Item;
-import com.example.sandbox.util.swagger.definitions.PetBody;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import static com.example.sandbox.util.Tools.generateRandomNumber;
 import static com.example.sandbox.util.constans.TestData.DEFAULT_IMAGE;
-import static com.example.sandbox.util.constans.TestData.HYDRAIMAGE;
 
 @SuperBuilder
 @Getter

@@ -13,8 +13,8 @@ import org.testng.annotations.Test;
 import static com.example.sandbox.util.Tools.generateRandomNumber;
 import static com.example.sandbox.util.body.pet.JsonBody.createJsonBody;
 import static com.example.sandbox.util.constans.Tags.SMOKE;
-import static com.example.sandbox.util.constans.TestData.HYDRAIMAGE;
-import static com.example.sandbox.util.constans.TestData.PET_NAME;
+import static com.example.sandbox.util.constans.TestData.PET_PHOTO_URL_HYDRAIMAGE;
+import static com.example.sandbox.util.constans.TestData.PET_NAME_01;
 
 public class PostNewPetTest extends Common {
 
@@ -32,7 +32,7 @@ public class PostNewPetTest extends Common {
                                 .name("Hydra")
                                 .build())
                         .name("Princess")
-                        .photoUrl(HYDRAIMAGE)
+                        .photoUrl(PET_PHOTO_URL_HYDRAIMAGE)
                         .tag(Item.builder()
                                 .id(2)
                                 .name("cute")
@@ -83,7 +83,7 @@ public class PostNewPetTest extends Common {
     @Test(enabled = true,groups = {SMOKE},description ="PET[POST] Add a new pet to the store - Create pet (SIMPLE) - expected response code: 200")
     public void T018() {
 
-        JsonBody body = PostCreatePetSimple.postCreatePetSimple(PET_NAME);
+        JsonBody body = PostCreatePetSimple.postCreatePetSimple(PET_NAME_01);
 
         Response response = postUrl(newPet, createJsonBody((PostCreatePet) body));
         Assert.assertEquals(response.getStatusCode(), 200, "Invalid response code");
