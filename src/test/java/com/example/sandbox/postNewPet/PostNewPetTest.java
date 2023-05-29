@@ -1,7 +1,9 @@
 package com.example.sandbox.postNewPet;
 
 import com.example.sandbox.Common;
+import com.example.sandbox.util.body.pet.JsonBody;
 import com.example.sandbox.util.body.pet.PostCreatePet;
+import com.example.sandbox.util.body.pet.PostCreatePetSimple;
 import com.example.sandbox.util.swagger.definitions.Item;
 import com.example.sandbox.util.swagger.definitions.PetBody;
 import io.restassured.response.Response;
@@ -12,6 +14,7 @@ import static com.example.sandbox.util.Tools.generateRandomNumber;
 import static com.example.sandbox.util.body.pet.JsonBody.createJsonBody;
 import static com.example.sandbox.util.constans.Tags.SMOKE;
 import static com.example.sandbox.util.constans.TestData.HYDRAIMAGE;
+import static com.example.sandbox.util.constans.TestData.PET_NAME;
 
 public class PostNewPetTest extends Common {
 
@@ -76,4 +79,13 @@ public class PostNewPetTest extends Common {
         Assert.assertEquals(response.getStatusCode(),405,"Invalid response code");
     }
 
+
+    @Test(enabled = true,groups = {SMOKE},description ="PET[POST] Add a new pet to the store - Create pet (SIMPLE) - expected response code: 200")
+    public void T018() {
+
+        JsonBody body = PostCreatePetSimple.postCreatePetSimple(PET_NAME);
+
+        Response response = postUrl(newPet, createJsonBody((PostCreatePet) body));
+        Assert.assertEquals(response.getStatusCode(), 200, "Invalid response code");
+    }
 }

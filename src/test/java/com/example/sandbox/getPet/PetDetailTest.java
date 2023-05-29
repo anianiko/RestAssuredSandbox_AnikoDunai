@@ -1,6 +1,7 @@
 package com.example.sandbox.getPet;
 
 import com.example.sandbox.Common;
+import com.example.sandbox.util.Assertions;
 import com.example.sandbox.util.constans.TestData;
 import io.restassured.response.Response;
 
@@ -14,21 +15,16 @@ import static com.example.sandbox.util.constans.Tags.SMOKE;
 
 public class PetDetailTest extends Common {
 
-    @Test(enabled = true,groups = {SMOKE},description ="PET[GET] Find Pets by status/ID")
+    @Test(enabled = true,groups = {SMOKE},description ="PET[GET] Find Pets by status/ID - pet detail test")
     public void T003(){
         Map<String, String> queryParams = new TreeMap<>();
         queryParams.put("status","available");
 
         //Find Pets by status - 200
         Response  response = getUrl(findByStatus, queryParams);
-        Assert.assertEquals(response.getStatusCode(),200,"Invalid response code");
-
-        //Find Pets by status - 400
-        //TODO - PET[GET] Find Pets by status - 400 Invalid status value
-        /*
-        Response  response5 = getUrl(findByStatus, queryParams);
-        Assert.assertEquals(response5.getStatusCode(),400,"Invalid response code");
-         */
+        //Assert.assertEquals() with assertion error message:
+        //Assert.assertEquals(response.getStatusCode(),200,"Invalid response code");
+        Assertions.assertReturnCode(response, 200);
 
 
         String id = response.jsonPath().get("[0].id").toString();

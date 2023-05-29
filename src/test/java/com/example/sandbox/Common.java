@@ -80,6 +80,22 @@ public class Common extends Endpoints {
 
     //----------------------------------PUT----------------------------------
 
+    //TODO -PUT-
+
+
     //----------------------------------DELETE----------------------------------
+
+    //TODO -DELETE-
+    /*
+    public Response deletePet(String pedId){
+
+        return given()
+                .relaxedHTTPSValidation()
+                .contentType("application/json; charset=UTF-8")
+                .body(pedId)
+                .put();
+    }
+     */
+
 }
 
