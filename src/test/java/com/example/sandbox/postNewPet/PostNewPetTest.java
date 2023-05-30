@@ -4,7 +4,7 @@ import com.example.sandbox.Common;
 import com.example.sandbox.util.body.pet.JsonBody;
 import com.example.sandbox.util.body.pet.PostCreatePet;
 import com.example.sandbox.util.body.pet.PostCreatePetSimple;
-import com.example.sandbox.util.swagger.definitions.Item;
+import com.example.sandbox.util.swagger.definitions.CategoryItem;
 import com.example.sandbox.util.swagger.definitions.PetBody;
 import io.restassured.response.Response;
 import org.testng.Assert;
@@ -27,13 +27,13 @@ public class PostNewPetTest extends Common {
         PostCreatePet body = PostCreatePet.builder()
                 .PetBody(PetBody.builder()
                         .id(generateRandomNumber())
-                        .category(Item.builder()
+                        .category(CategoryItem.builder()
                                 .id(1)
                                 .name("Hydra")
                                 .build())
                         .name("Princess")
                         .photoUrl(PET_PHOTO_URL_HYDRAIMAGE)
-                        .tag(Item.builder()
+                        .tag(CategoryItem.builder()
                                 .id(2)
                                 .name("cute")
                                 .build())

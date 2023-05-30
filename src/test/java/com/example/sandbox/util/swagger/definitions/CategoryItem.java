@@ -8,11 +8,30 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Item {
+public class CategoryItem {
 
     @JsonProperty("id")
-    private int id;
+    private Integer id;
 
     @JsonProperty("name")
     private String name;
+
+    //getter
+
+    public Integer getId(){
+        return id;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    //setter
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

@@ -11,13 +11,13 @@ import lombok.experimental.SuperBuilder;
 public class OrderBody {
 
     @JsonProperty("id")
-    private int id;
+    private Integer id;
 
     @JsonProperty("petId")
-    private int petId;
+    private Integer petId;
 
     @JsonProperty("quantity")
-    private int quantity;
+    private Integer quantity;
 
     @JsonProperty("shipDate")
     private String shipDate;
@@ -27,4 +27,55 @@ public class OrderBody {
 
     @JsonProperty("complete")
     private Boolean complete;
+
+    //getter
+    public Integer getId() {
+        return id;
+    }
+
+    public Integer getPetId() {
+        return petId;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public String getShipDate() {
+        return shipDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public Boolean getComplete() {
+        return complete;
+    }
+
+    //setter
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setPetId(Integer petId) {
+        this.petId = petId;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public void setShipDate(String shipDate) {
+        this.shipDate = shipDate;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setComplete(Boolean complete) {
+        this.complete = complete;
+    }
 }

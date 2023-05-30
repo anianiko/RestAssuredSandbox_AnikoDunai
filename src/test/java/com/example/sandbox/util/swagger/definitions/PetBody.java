@@ -14,10 +14,10 @@ import java.util.List;
 public class PetBody {
 
     @JsonProperty("id")
-    private int id;
+    private Integer id;
 
     @JsonProperty("category")
-    private Item category;
+    private CategoryItem category;
 
     @JsonProperty("name")
     private String name;
@@ -28,8 +28,61 @@ public class PetBody {
 
     @Singular()
     @JsonProperty("tags")
-    private List<Item> tags;        //swagger/definitions/Item.class
+    private List<CategoryItem> tags;        //swagger/definitions/Item.class
 
     @JsonProperty("status")
     private String status;
+
+    //getter
+    public Integer getId() {
+        return id;
+    }
+
+    public CategoryItem getCategory() {
+        return category;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<String> getPhotoUrls() {
+        return photoUrls;
+    }
+
+    public List<CategoryItem> getTags() {
+        return tags;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    //setter
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setCategory(CategoryItem category) {
+        this.category = category;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhotoUrls(List<String> photoUrls) {
+        this.photoUrls = photoUrls;
+    }
+
+    public void setTags(List<CategoryItem> tags) {
+        this.tags = tags;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+
 }

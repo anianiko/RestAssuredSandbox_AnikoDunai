@@ -23,8 +23,8 @@ public class Common extends Endpoints {
                 .then()
                 .log()
                 .all()
-                .extract().response();
 
+                .extract().response();
     }
     public Response getUrl(String endpoint, Map<String, String> queryParam ){
 
@@ -82,6 +82,21 @@ public class Common extends Endpoints {
     //----------------------------------PUT----------------------------------
 
     //TODO -PUT-
+    public Response  putUrl(String endpoint, String body){
+
+        return given()
+                .relaxedHTTPSValidation()
+                .contentType("application/json; charset=UTF-8")
+                .body(body)
+                .and()
+                .log().everything()
+                .when()
+                .put(baseUrl+endpoint)
+                .then()
+                .log()
+                .all()
+                .extract().response();
+    }
 
 
     //----------------------------------DELETE----------------------------------
