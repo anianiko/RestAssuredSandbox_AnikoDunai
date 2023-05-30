@@ -6,6 +6,6 @@ import org.springframework.lang.Nullable;
 
 public class Assertions {
     public static void assertReturnCode(Response response,Integer code){
-        Assert.assertEquals((Integer) response.getStatusCode(),code);
+        Assert.assertEquals(code, (Integer) response.getStatusCode());
     }
 }

@@ -14,4 +14,9 @@ public class PutUpdatePet extends JsonBody{
     //JSON object
     @JsonProperty
     private PetBody PetBody;
+
+    //getter
+    public com.example.sandbox.util.swagger.definitions.PetBody getPetBody() {
+        return PetBody;
+    }
 }

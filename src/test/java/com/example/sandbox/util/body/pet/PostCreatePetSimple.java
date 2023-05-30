@@ -6,7 +6,7 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import static com.example.sandbox.util.Tools.generateRandomNumber;
-import static com.example.sandbox.util.constans.TestData.DEFAULT_IMAGE;
+import static com.example.sandbox.util.constans.TestData.PET_DEFAULT_IMAGE;
 
 @SuperBuilder
 @Getter
@@ -23,7 +23,7 @@ public class PostCreatePetSimple extends PostCreatePet{
                                 .name("non-categorized")
                                 .build())
                         .name(name)
-                        .photoUrl(DEFAULT_IMAGE)
+                        .photoUrl(PET_DEFAULT_IMAGE)
                         .tag(CategoryItem.builder()
                                 .id(0)
                                 .name("")
@@ -33,5 +33,6 @@ public class PostCreatePetSimple extends PostCreatePet{
                 ).build();
         return body;
     }
+
 
 }

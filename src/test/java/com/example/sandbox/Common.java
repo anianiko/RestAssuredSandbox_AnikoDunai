@@ -1,7 +1,7 @@
 package com.example.sandbox;
 
 
-import com.example.sandbox.util.constans.TestData;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 import java.util.Map;
@@ -81,7 +81,6 @@ public class Common extends Endpoints {
 
     //----------------------------------PUT----------------------------------
 
-    //TODO -PUT-
     public Response  putUrl(String endpoint, String body){
 
         return given()
@@ -101,17 +100,18 @@ public class Common extends Endpoints {
 
     //----------------------------------DELETE----------------------------------
 
-    //TODO -DELETE-
-    /*
-    public Response deletePet(String pedId){
+    public Response deleteUrl(String endpoint){
 
         return given()
                 .relaxedHTTPSValidation()
                 .contentType("application/json; charset=UTF-8")
-                .body(pedId)
-                .put();
+                .given()
+                .when()
+                .delete(baseUrl+endpoint)
+                .then()
+                .contentType(ContentType.JSON)
+                .extract().response();
     }
-     */
 
 }
 

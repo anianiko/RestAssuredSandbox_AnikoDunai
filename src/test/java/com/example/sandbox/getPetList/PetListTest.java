@@ -3,8 +3,6 @@ package com.example.sandbox.getPetList;
 import com.example.sandbox.Common;
 import com.example.sandbox.util.Assertions;
 import io.restassured.response.Response;
-
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.Map;
@@ -50,7 +48,7 @@ public class PetListTest extends Common {
     @Test(enabled = true,groups = {SMOKE},description ="PET[GET] Find Pets by status (invalid status value) - response code: 400")
     public void T021(){
         Map<String, String> queryParams = new TreeMap<>();
-        queryParams.put("status","NonExistStatus");
+        queryParams.put("status","TestStatus");
 
         Response  response = getUrl(findByStatus, queryParams);
         Assert.assertEquals(response.getStatusCode(),400,"Invalid response code");

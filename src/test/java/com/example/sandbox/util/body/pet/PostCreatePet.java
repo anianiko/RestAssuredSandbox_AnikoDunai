@@ -15,7 +15,6 @@ public class PostCreatePet extends  JsonBody{
         private PetBody PetBody;
 
         //getter
-
         public com.example.sandbox.util.swagger.definitions.PetBody getPetBody() {
                 return PetBody;
         }
